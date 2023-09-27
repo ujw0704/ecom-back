@@ -23,6 +23,7 @@ image:{
     required: true,
 }
 
+
 })
 const productitems = mongoose.model('productitems',items)
 

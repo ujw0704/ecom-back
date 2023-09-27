@@ -1,16 +1,16 @@
 import express from 'express';
-import cors from "cors"
+// import cors from "cors"
 import connection from "../db/connecting.js"
 import user from '../models/FormSchema.js';
 
 const app = express(); 
 
 // const routes = express.Router()
-app.use(cors({origin: "http://localhost:3000"}))
-app.use(express.urlencoded({extended:true}))
-app.use(express.json())
+// app.use(cors({origin: "http://localhost:3000"}))
+// app.use(express.urlencoded({extended:true}))
+// app.use(express.json())
 
-app.post('/login', async(req, res)=>{
+routes.post('/login', async(req, res)=>{
     // const name = req.body.name
     // const password = req.body.password
 
