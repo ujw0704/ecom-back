@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from "cors"
 import connection from './db/connecting.js';
-
+import routes from './routes/routes.js';
 
 import Product from './routes/Product.js';
 
@@ -14,16 +14,16 @@ app.use(cors({
     
   })); 
     app.use(Product)
-// app.use(routes)
+ app.use(routes)
 
 
 app.get("/Product", async (req, res) => {
    console.log("ujwal")
   });
 
-app.get("/allproduct",(req,res)=>{
+// app.get("/allproduct",(req,res)=>{
 
-})
+// })
  connection.then(()=>{
 
    app.listen(8080,() => {
