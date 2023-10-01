@@ -4,7 +4,7 @@ import connection from './db/connecting.js';
 // import routes from './routes/routes.js';
 import Product from './routes/Product.js';
 import regst from './routes/FormRegister.js';
-
+import mail from "./controller/sendingmail.js"
 
 const app = express()
 app.use(express.json())
@@ -17,7 +17,7 @@ app.use(cors({
 app.use(Product)
 //  app.use(routes)
 app.use("/", regst)
-
+ app.use ("/register",mail)
 app.get("/Product", async (req, res) => {
   console.log("ujwal")
 });

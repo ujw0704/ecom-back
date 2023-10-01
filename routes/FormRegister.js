@@ -7,6 +7,7 @@ const regst = express.Router();
 
 //--------------------login-------------------------------------------
 regst.post('/login', async(req, res)=>{
+
   // const name = req.body.name
   // const password = req.body.password
 
@@ -52,7 +53,7 @@ regst.post('/login', async(req, res)=>{
 regst.post("/register", async (req, res) => {
   const { firstname, lastname, password, number, username, email } = req.body;
   console.log(req.body);
-
+   console.log(password)
   // const hashedPassword = md5(password);
   // console.log(hashedPassword);
 
