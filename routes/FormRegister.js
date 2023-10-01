@@ -14,7 +14,7 @@ regst.post('/login', async(req, res)=>{
   const{username , password } = req.body
 
   // const newuser = new user({
-  //     name,
+  //     username,
   //     password
   // })
    
@@ -28,13 +28,15 @@ regst.post('/login', async(req, res)=>{
     console.log("DB pwd: " + user.password);
     console.log("User entered pwd: " + hashedPassword);
     if (user.password === hashedPassword) {
-      return res.json({ message: "Login successful" });
+      
+      return res.send({status:200,message: "Login successful"})
     } else {
-      return res.status(401).json({ error: "Incorrect password" });
+      return res.send({status:401,message: "Login unsuccessful"})
     }
   } catch (error) {
-    return res.status(500).json({ error: "Internal server error" });
+    return res.send({status:401,message: "Login intrnalerror"})
   }
+  
 });
 
 
